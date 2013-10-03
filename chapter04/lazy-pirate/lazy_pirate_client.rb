@@ -1,3 +1,4 @@
+# translated from http://zguide.zeromq.org/py:lpclient
 require 'ffi-rzmq'
 require 'logger'
 
