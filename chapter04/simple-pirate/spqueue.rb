@@ -63,7 +63,7 @@ module SimplePirate
             message.shift
             reply = message[0]
 
-            # reply to client if its not a ready
+            # reply to client if its not ready
             if reply != LRU_READY
               logger.info "reply to client on fe node!! -> #{message}"
               workers.unshift address

@@ -9,7 +9,7 @@ module LazyPirate
       logger:      Logger.new(STDOUT),
       retries:     3,
       server_port: 5555,
-      timeout:     5 * 1000) # in milliseconds
+      timeout:     10 * 1000) # in milliseconds
 
       @logger      = logger
       @retries     = retries
@@ -37,6 +37,7 @@ module LazyPirate
     def send
       retries.times do |tries|
         message = "message - ##{tries}"
+        puts "I: Sending message - #{message}"
         send_status = @client_socket.send_string(message)
         rc = @poller.poll(@timeout)
         if rc > 0
